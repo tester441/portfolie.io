@@ -322,34 +322,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form with feedback
+    // Form feedback removed - now using Formspree handler below
+});
+
+// Enhanced form handling with Formspree
+document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const formMessage = document.getElementById('form-message');
-            const submitButton = this.querySelector('button[type="submit"]');
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Versturen...';
+            submitBtn.disabled = true;
             
-            // Visual feedback
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verzenden...';
-            submitButton.disabled = true;
+            // Get form data
+            const formData = new FormData(contactForm);
             
-            // Simulate form submission  
-            setTimeout(() => {
-                formMessage.innerHTML = '<div style="color: #10b981; padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px; margin: 1rem 0;"><i class="fas fa-check-circle"></i> Bericht succesvol verzonden!</div>';
+            try {
+                // Send to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
                 
-                this.reset();
-                submitButton.innerHTML = 'Verstuur Bericht';
-                submitButton.disabled = false;
-                
-                // Success animation
-                submitButton.style.background = '#10b981';
-                setTimeout(() => {
-                    submitButton.style.background = '';
-                }, 2000);
-                
-            }, 2000);
+                if (response.ok) {
+                    // Success message
+                    formMessage.innerHTML = '<div style="color: #22c55e; padding: 1rem; background: rgba(34, 197, 94, 0.1); border-radius: 8px; margin: 1rem 0; animation: slideInUp 0.5s ease-out;"><i class="fas fa-check-circle"></i> Bericht succesvol verzonden! Ik neem snel contact op.</div>';
+                    formMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                // Error message
+                formMessage.innerHTML = '<div style="color: #ef4444; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 8px; margin: 1rem 0; animation: slideInUp 0.5s ease-out;"><i class="fas fa-exclamation-triangle"></i> Er ging iets mis. Probeer opnieuw of mail direct naar gulecmahir1@gmail.com</div>';
+                formMessage.style.display = 'block';
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });
