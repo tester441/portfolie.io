@@ -1,0 +1,84 @@
+// Layout Mixins
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($columns, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+// Animation & Transition Mixins
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Button Mixin
+@mixin button($bg, $color, $border: none) {
+  @extend %button-base;
+  background-color: $bg;
+  color: $color;
+  border: $border;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+// Media Query Mixin
+@mixin breakpoint($point) {
+  @if map-has-key($breakpoints, $point) {
+    @media (max-width: map-get($breakpoints, $point)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+
+// Placeholder Selectors for @extend
+%card-shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: $transition;
+  
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%button-base {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: map-get($font-weights, "medium");
+  text-decoration: none;
+  transition: $transition;
+  font-size: map-get($font-sizes, "medium");
+}
+
+// Functions with Operations
+@function calculate-width($columns, $total-columns: 12) {
+  @return percentage($columns / $total-columns);
+}
+
+@function lighten-color($color, $amount: 10%) {
+  @return lighten($color, $amount);
+}
+
+@function darken-color($color, $amount: 10%) {
+  @return darken($color, $amount);
+}

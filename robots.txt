@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /img/raw/
+Disallow: /css/dev/
+Disallow: /js/dev/
+
+Sitemap: https://www.mahirgulec.nl/sitemap.xml

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahir Gulec | Software Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Meta tags voor betere SEO en toegankelijkheid -->
+    <meta name="description" content="Mahir Gulec - Software Developer gespecialiseerd in frontend en backend ontwikkeling. Bekijk mijn projecten en neem contact op voor samenwerkingen.">
+    <meta name="author" content="Mahir Gulec">
+    <meta name="keywords" content="software developer, webontwikkeling, frontend developer, Rotterdam, portfolio">
+    <link rel="canonical" href="https://www.mahirgulec.nl/index.html">
+    <!-- Open Graph tags voor sociale media -->
+    <meta property="og:title" content="Mahir Gulec | Software Developer Portfolio">
+    <meta property="og:description" content="Bekijk het portfolio van Mahir Gulec, Software Developer uit Rotterdam met expertise in webontwikkeling.">
+    <meta property="og:image" content="img/profile-thumbnail.jpg">
+    <meta property="og:url" content="https://www.mahirgulec.nl">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header met navigatie - gebruikt Flexbox voor layout -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Hoofdnavigatie">
+            <span class="logo">Portfolio</span>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">Over Mij</a></li>
+                <li><a href="#skills" class="nav-item">Vaardigheden</a></li>
+                <li><a href="#projects" class="nav-item">Projecten</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- Home sectie - gebruikt CSS Grid voor layout -->
+        <section id="home" class="section">
+            <section class="container home-grid">
+                <article class="content fade-in">
+                    <h1>Hallo, ik ben <span class="highlight">Mahir</span></h1>
+                    <h2>Ik ben een <span class="typed-text" aria-live="polite">Software Developer</span></h2>
+                    <p>Welkom op mijn portfolio website</p>
+                    <section class="cta-buttons">
+                        <a href="#contact" class="btn primary">Neem Contact Op</a>
+                        <a href="#projects" class="btn secondary">Bekijk Werk</a>
+                    </section>
+                </article>
+                <figure class="hero-image fade-in">
+                    <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="Professionele 2D avatar van Mahir, software developer" width="300" height="300">
+                </figure>
+            </section>
+            <a href="#about" class="scroll-down" aria-label="Scroll naar Over Mij sectie">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </section>
+        
+        <!-- Over mij sectie - gebruikt Flexbox voor layout -->
+        <section id="about" class="section">
+            <section class="container">
+                <h2 class="section-title">Over Mij</h2>
+                <section class="about-content">
+                    <article class="about-text slide-in from-right">
+                        <p>Hallo! Ik ben een gepassioneerde software developer die graag mooie en functionele websites maakt. Met een achtergrond in design en programmeren, lever ik creatieve oplossingen die echte problemen oplossen.</p>
+                        <p>Ik ben gespecialiseerd in frontend ontwikkeling, maar heb ook ervaring met backend technologieën zoals PHP en MySQL. Mijn doel is om applicaties te bouwen die niet alleen esthetisch aantrekkelijk zijn, maar ook gebruiksvriendelijk en geoptimaliseerd voor prestaties.</p>
+                        <dl class="personal-info">
+                            <section class="info-item">
+                                <dt class="info-title">E-mail:</dt>
+                                <dd class="info-value">gulecmahir1@gmail.com</dd>
+                            </section>
+                            <section class="info-item">
+                                <dt class="info-title">Telefoon:</dt>
+                                <dd class="info-value">06 48 67 70 36</dd>
+                            </section>
+                            <section class="info-item">
+                                <dt class="info-title">Locatie:</dt>
+                                <dd class="info-value">Rotterdam, Nederland</dd>
+                            </section>
+                        </dl>
+                        <a href="assets/Minimalist CV Resume (1).pdf" class="btn primary" download>Download CV</a>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <!-- Vaardigheden sectie - gebruikt CSS Grid voor layout -->
+        <section id="skills" class="section">
+            <section class="container">
+                <h2 class="section-title">Mijn Vaardigheden</h2>
+                <section class="skills-container skills-grid">
+                    <article class="skill-category fade-in">
+                        <h3>Frontend</h3>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="95%">HTML</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="90%">CSS</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="85%">JavaScript</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                    </article>
+                      <article class="skill-category fade-in">
+                        <h3>Backend</h3>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="85%">PHP</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="80%">MySQL</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                    </article>
+                    
+                    <article class="skill-category fade-in">
+                        <h3>Netwerken</h3>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="75%">VPN's</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>                        <section class="skill-item">
+                            <span class="skill-name" data-level="80%">DNS</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                    </article>
+                    
+                    <article class="skill-category fade-in">
+                        <h3>Tools</h3>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="75%">Git</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                        <section class="skill-item">
+                            <span class="skill-name" data-level="95%">VS Code</span>
+                            <section class="skill-bar">
+                                <span class="skill-level"></span>
+                            </section>
+                        </section>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <!-- Projecten sectie - gebruikt CSS Grid voor layout -->
+        <section id="projects" class="section">
+            <section class="container">
+                <h2 class="section-title">Mijn Projecten</h2>
+                <section class="projects-grid">
+                    <article class="project-card fade-in">
+                        <section class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>Een moderne, responsieve portfolio website gebouwd met HTML, CSS en JavaScript. Features include animaties, responsief ontwerp en contactformulier.</p>
+                            <section class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Responsief Design</span>
+                            </section>
+                            <section class="project-links">
+                                <a href="https://github.com/tester441/portfolie" class="btn small secondary">GitHub</a>
+                            </section>
+                        </section>
+                    </article>
+                    
+                    <article class="project-card fade-in">
+                        <section class="project-info">
+                            <h3>Escape Room Spel</h3>
+                            <p>Een interactief escape room spel ontwikkeld als webapplicatie met PHP, met puzzels, timers en verschillende levels.</p>
+                            <section class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>Game Development</span>
+                            </section>
+                            <section class="project-links">
+                                <a href="https://github.com/tester441/escape-room-project" class="btn small secondary">GitHub</a>
+                            </section>
+                        </section>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <!-- Contact sectie - gebruikt CSS Grid en Flexbox voor layout -->
+        <section id="contact" class="section">
+            <section class="container">
+                <h2 class="section-title">Neem Contact Op</h2>
+                <section class="contact-content contact-grid">
+                    <article class="contact-info slide-in from-left">
+                        <section class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <section>
+                                <h3>Locatie</h3>
+                                <p>Rotterdam, Nederland</p>
+                            </section>
+                        </section>
+                        <section class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <section>
+                                <h3>E-mail</h3>
+                                <p>gulecmahir1@gmail.com</p>
+                            </section>
+                        </section>
+                        <section class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <section>
+                                <h3>Telefoon</h3>
+                                <p>06 48 67 70 36</p>
+                            </section>
+                        </section>                        <section class="social-links">
+                            <a href="https://github.com/tester441" class="social-link"><i class="fab fa-github"></i></a>
+                        </section>                    </article>                    <article class="contact-form slide-in from-right">                        <form id="contact-form" aria-label="Contact formulier" method="POST" action="#" onsubmit="return validateForm()">
+                            <section class="form-group">
+                                <label for="name" class="visually-hidden">Jouw Naam</label>
+                                <input type="text" id="name" name="name" placeholder="Jouw Naam" required aria-required="true">
+                            </section>
+                            <section class="form-group">
+                                <label for="email" class="visually-hidden">Jouw E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="Jouw E-mail" required aria-required="true">
+                            </section>
+                            <section class="form-group">
+                                <label for="subject" class="visually-hidden">Onderwerp</label>
+                                <input type="text" id="subject" name="subject" placeholder="Onderwerp">
+                            </section>                            <section class="form-group">
+                                <label for="message" class="visually-hidden">Jouw Bericht</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Jouw Bericht" required aria-required="true"></textarea>
+                            </section>                            <div id="form-message" class="form-message"></div>
+                            <button type="submit" class="btn primary">Verstuur Bericht</button>
+                        </form>
+                    </article>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    
+    
+    <button class="back-to-top right-offset" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
